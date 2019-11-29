@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var Data = {
+      add: function(key, fn) {
+        if (!Array.isArray(this[key])) this[key] = [];
+        this[key].push(fn);
+      },
+      trigger: function(key) {
+        if (!this[key] instanceof Array) return;
+        this[key].forEach(e => e());
+      }
+    };
+    function num1() {
+      console.log("nihao!num1");
+    }
+    function num2() {
+      console.log("nihao!num2");
+    }
+    function num3() {
+      console.log("nihao!num3");
+    }
+    function num4() {
+      console.log(("nihao!num4"));
+    }
+    Data.add("proj", num1);
+    Data.add("proj", num2);
+    Data.add("proj", num3);
+    Data.add("proj", num4);
+    Data.trigger("proj");
+  </script>
+</html>

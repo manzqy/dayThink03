@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function isPalindrome(str) {
+        let len = str.length;
+        if (len <= 1) return true;
+        if (str.charAt(0) !== str.charAt(len - 1)) return false;
+        return isPalindrome(str.substring(1,str.length - 2));
+    }
+</script>
+</html>
